@@ -26,6 +26,7 @@ class LaravelNovaExcelServiceProvider extends ServiceProvider
      */
     protected function routes()
     {
+        if (config('excel_nova.add_routes') !== true) return;
         if ($this->app->routesAreCached()) {
             return;
         }
