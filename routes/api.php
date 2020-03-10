@@ -7,4 +7,4 @@ use Maatwebsite\LaravelNovaExcel\Http\Controllers\ExcelController;
 Route
     ::get('download', [ExcelController::class, 'download'])
     ->name('laravel-nova-excel.download')
-    ->middleware(ValidateSignature::class);
+    ->middleware('signed:0');
