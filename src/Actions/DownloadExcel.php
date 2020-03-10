@@ -58,6 +58,8 @@ class DownloadExcel extends ExportToExcel
         return URL::temporarySignedRoute('laravel-nova-excel.download', now()->addMinutes(1), [
             'path'     => encrypt($response->getFile()->getPathname()),
             'filename' => $this->getFilename(),
-        ]);
+        ],
+            config('nova-excel.signature_absolute_path') ?? false
+        );
     }
 }
